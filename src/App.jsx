@@ -7,6 +7,10 @@ function App() {
 
   return (
     <main>
+      <h1>Tic Tac Toe</h1>
+
+      {winner && <p>{winner} Wins!</p>}
+
       <div className="board">
         {board.map((square, index) => (
           // Actually pass in the dumb, stupid marker (square)
