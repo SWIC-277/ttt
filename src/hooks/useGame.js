@@ -6,14 +6,17 @@ function reducer(state, action) {
     case "made_move": {
       // Only mutate a local copy of the state
       const board2Update = [...state.board];
+      let updatedTurn = state.turn;
 
+      // Only do the move if the cell is empty
       if (!board2Update[action.index]) {
         board2Update[action.index] = state.turn;
+        updatedTurn = state.turn === "X" ? "O" : "X";
       }
 
       return {
         board: board2Update,
-        turn: state.turn === "X" ? "O" : "X",
+        turn: updatedTurn,
         winner: check4Winner(board2Update, state.turn) ? state.turn : null,
       };
     }
@@ -34,6 +37,7 @@ export default function useGame() {
 
   const { board, winner } = state;
 
+  // Export out the turn if
   return {
     board,
     winner,
