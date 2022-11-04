@@ -11,9 +11,10 @@ export default function Square({ marker, id, handleClick }) {
 Square.propTypes = {
   marker: PropTypes.string,
   id: PropTypes.number.isRequired,
-  handleClick: PropTypes.func.isRequired,
+  handleClick: PropTypes.func,
 };
 
 Square.defaultProps = {
+  handleClick: () => {},
   marker: "",
 };

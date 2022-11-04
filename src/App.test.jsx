@@ -26,4 +26,6 @@ describe("App", () => {
     expect(squares[1]).toHaveTextContent("O");
     expect(squares[2]).toHaveTextContent("X");
   });
+
+  // TODO: Add test for winner
 });
