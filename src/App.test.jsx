@@ -40,4 +40,18 @@ describe("App", () => {
 
     expect(screen.getByText("X Wins!")).toBeInTheDocument();
   });
+
+  it("resets the game whenever the 'reset game' button is clicked", async () => {
+    const user = userEvent.setup();
+
+    render(<App />);
+
+    const squares = screen.getAllByRole("button", { name: "" });
+    const resetButton = screen.getByRole("button", { name: /Reset Game/i });
+
+    await user.click(squares[0]);
+    await user.click(resetButton);
+
+    squares.forEach((square) => expect(square).toHaveTextContent(""));
+  });
 });
