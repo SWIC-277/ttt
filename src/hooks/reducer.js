@@ -16,6 +16,12 @@ export default function reducer(state, action) {
         winner: check4Winner(board2Update, state.turn) ? state.turn : null,
       };
     }
+    case "reset_game":
+      return {
+        board: Array(9).fill(""),
+        turn: "X",
+        winner: null,
+      };
     default:
       throw new Error("Invalid action");
   }

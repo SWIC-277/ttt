@@ -11,6 +11,10 @@ export default function useGame() {
     dispatch({ type: "made_move", index: event.target.id });
   };
 
+  const resetGame = () => {
+    dispatch({ type: "reset_game" });
+  };
+
   const { board, winner } = state;
 
   // Export out the turn if
@@ -18,5 +22,6 @@ export default function useGame() {
     board,
     winner,
     makeMove,
+    resetGame,
   };
 }
