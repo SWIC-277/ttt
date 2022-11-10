@@ -30,15 +30,13 @@ describe("App", () => {
   it("displays 'X' as the winner", async () => {
     const user = userEvent.setup();
 
+    const clicks = [0, 3, 1, 4, 2];
+
     render(<App />);
 
     const squares = screen.getAllByRole("button");
 
-    await user.click(squares[0]);
-    await user.click(squares[3]);
-    await user.click(squares[1]);
-    await user.click(squares[4]);
-    await user.click(squares[2]);
+    await Promise.all(clicks.map((click) => user.click(squares[click])));
 
     expect(screen.getByText("X Wins!")).toBeInTheDocument();
   });
