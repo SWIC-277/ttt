@@ -7,15 +7,17 @@ export default function useGame() {
     turn: "X",
   });
 
+  const { board, winner } = state;
+
   const makeMove = (event) => {
-    dispatch({ type: "made_move", index: event.target.id });
+    if (!winner) {
+      dispatch({ type: "made_move", index: event.target.id });
+    }
   };
 
   const resetGame = () => {
     dispatch({ type: "reset_game" });
   };
-
-  const { board, winner } = state;
 
   return {
     board,
