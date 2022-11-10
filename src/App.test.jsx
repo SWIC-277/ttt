@@ -6,7 +6,7 @@ describe("App", () => {
   it("renders Tic Tac Toe", () => {
     render(<App />);
 
-    const squares = screen.getAllByRole("button");
+    const squares = screen.getAllByRole("button", { name: "" });
 
     expect(squares).toHaveLength(9);
   });
