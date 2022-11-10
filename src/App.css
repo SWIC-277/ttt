@@ -11,12 +11,18 @@
     @apply mb-14 text-center text-3xl font-bold;
   }
 
-  button {
-    @apply flex h-32 w-32 items-center justify-center border-black text-9xl;
-  }
-
   p {
     @apply mb-8 animate-bounce text-center text-xl font-bold;
+  }
+}
+
+@layer components {
+  .board {
+    @apply container grid h-96 w-96 grid-cols-3 grid-rows-3;
+  }
+
+  .board button {
+    @apply flex h-32 w-32 items-center justify-center border-black text-9xl;
   }
 
   .board button:nth-child(1),
@@ -35,11 +41,5 @@
   .board button:nth-child(5),
   .board button:nth-child(6) {
     @apply border-b;
-  }
-}
-
-@layer components {
-  .board {
-    @apply container grid h-96 w-96 grid-cols-3 grid-rows-3;
   }
 }
