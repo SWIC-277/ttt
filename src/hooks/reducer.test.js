@@ -33,3 +33,20 @@ it("updates the winner after a winning move", () => {
 
   expect(newState.winner).toBe("X");
 });
+
+it("resets the state", () => {
+  const state = {
+    board: ["X", "O", "X", "O", "X", "O", null, null, null],
+    turn: "X",
+  };
+
+  const action = {
+    type: "reset_game",
+  };
+
+  const newState = reducer(state, action);
+
+  expect(newState.board).toEqual(Array(9).fill(null));
+  expect(newState.turn).toBe("X");
+  expect(newState.winner).toBe(null);
+});

@@ -18,7 +18,7 @@ export default function reducer(state, action) {
     }
     case "reset_game":
       return {
-        board: Array(9).fill(""),
+        board: Array(9).fill(null),
         turn: "X",
         winner: null,
       };
