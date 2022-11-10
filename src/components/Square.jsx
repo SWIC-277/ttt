@@ -9,7 +9,7 @@ export default function Square({ marker, id, handleClick }) {
 }
 
 Square.propTypes = {
-  marker: PropTypes.oneOf(["X", "O"]),
+  marker: PropTypes.oneOf(["X", "O", ""]),
   id: PropTypes.number.isRequired,
   handleClick: PropTypes.func,
 };
