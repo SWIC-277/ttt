@@ -3,12 +3,13 @@ import Square from "./components/Square";
 import useGame from "./hooks/useGame";
 
 function App() {
-  const { board, winner, makeMove, resetGame } = useGame();
+  const { board, winner, turn, makeMove, resetGame } = useGame();
 
   return (
     <main className="flex flex-col items-center">
       <h1>Tic Tac Toe</h1>
 
+      <h2>{turn}&apos;s turn</h2>
       {winner && <p>{winner} Wins!</p>}
 
       <div className="board">

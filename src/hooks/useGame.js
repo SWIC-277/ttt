@@ -7,7 +7,7 @@ export default function useGame() {
     turn: Math.random() > 0.5 ? "X" : "O",
   });
 
-  const { board, winner } = state;
+  const { board, turn, winner } = state;
 
   const makeMove = (event) => {
     if (!winner) {
@@ -22,6 +22,7 @@ export default function useGame() {
   return {
     board,
     winner,
+    turn,
     makeMove,
     resetGame,
   };

@@ -8,7 +8,11 @@
   }
 
   h1 {
-    @apply mb-14 text-center text-3xl font-bold;
+    @apply mb-2 text-center text-3xl font-bold;
+  }
+
+  h2 {
+    @apply mb-4 text-center text-2xl font-bold;
   }
 
   p {
