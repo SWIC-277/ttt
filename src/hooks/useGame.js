@@ -10,8 +10,9 @@ export default function useGame() {
   const { board, turn, winner } = state;
 
   const makeMove = (event) => {
-    if (!winner) {
-      dispatch({ type: "made_move", index: event.target.id });
+    const index = Number(event.target.id);
+    if (!board[index] && !winner) {
+      dispatch({ type: "made_move", index });
     }
   };
 
