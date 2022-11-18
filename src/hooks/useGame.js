@@ -4,7 +4,7 @@ import reducer from "./reducer";
 export default function useGame() {
   const [state, dispatch] = useReducer(reducer, {
     board: Array(9).fill(null),
-    turn: "X",
+    turn: Math.random() > 0.5 ? "X" : "O",
   });
 
   const { board, winner } = state;
